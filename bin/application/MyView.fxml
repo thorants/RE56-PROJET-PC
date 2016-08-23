@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="-Infinity" prefHeight="767.0" prefWidth="1310.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MyController">
+   <children>
+      <SplitPane dividerPositions="0.4939117199391172" minHeight="-Infinity" prefHeight="767.0" prefWidth="1316.0">
+         <items>
+            <AnchorPane fx:id="simPane" minHeight="-Infinity" onMouseReleased="#moveAndSelectDevice" prefHeight="788.0" prefWidth="646.0" />
+            <AnchorPane fx:id="simPane1" minHeight="-Infinity" onMouseReleased="#moveAndSelectDevice" prefHeight="773.0" prefWidth="662.0">
+               <children>
+                  <SplitPane dividerPositions="0.5246305418719212" layoutY="28.0" minHeight="-Infinity" orientation="VERTICAL" prefHeight="741.0" prefWidth="662.0">
+                    <items>
+                      <AnchorPane fx:id="buttonPane" minHeight="-Infinity" minWidth="0.0" prefHeight="393.0" prefWidth="660.0" />
+                      <AnchorPane fx:id="infoPane" minHeight="-Infinity" minWidth="0.0" prefHeight="317.0" prefWidth="660.0">
+                           <children>
+                              <Label layoutX="99.0" layoutY="58.0" text="Phone ID" textAlignment="RIGHT" />
+                              <Label layoutX="95.0" layoutY="101.0" text="Connected" textAlignment="RIGHT" />
+                              <Label layoutX="92.0" layoutY="179.0" text="BLER Target" textAlignment="RIGHT" />
+                              <Label layoutX="405.0" layoutY="58.0" text="SIR Target" textAlignment="RIGHT" />
+                              <Label layoutX="396.0" layoutY="141.0" text="Power Emited" textAlignment="RIGHT" />
+                              <Label layoutX="420.0" layoutY="179.0" text="Gain" textAlignment="RIGHT" />
+                              <TextField fx:id="txtId" editable="false" layoutX="181.0" layoutY="54.0" />
+                              <TextField fx:id="txtMode" editable="false" layoutX="181.0" layoutY="137.0" />
+                              <TextField fx:id="txtBlerTarget" editable="false" layoutX="181.0" layoutY="175.0" />
+                              <TextField fx:id="txtSirTarget" editable="false" layoutX="479.0" layoutY="54.0" />
+                              <TextField fx:id="txtPowerEmited" editable="false" layoutX="479.0" layoutY="137.0" />
+                              <TextField fx:id="txtGain" editable="false" layoutX="479.0" layoutY="175.0" />
+                              <Label layoutX="108.0" layoutY="141.0" text="Mode" textAlignment="RIGHT" />
+                              <TextField fx:id="txtConnected" editable="false" layoutX="181.0" layoutY="97.0" />
+                              <TextField fx:id="txtSirEstimated" editable="false" layoutX="479.0" layoutY="97.0" />
+                              <Label layoutX="384.0" layoutY="101.0" text="SIR Estimated" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <MenuBar minHeight="-Infinity" prefHeight="26.0" prefWidth="1316.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="newSimulation" mnemonicParsing="false" onAction="#newSimulation" text="New Simulation" />
+                  <MenuItem fx:id="closeApplication" mnemonicParsing="false" onAction="#closeApplication" text="Close Application" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="newPhone" mnemonicParsing="false" onAction="#addPhone" text="Add a New Phone" />
+                  <MenuItem fx:id="powerPhone" mnemonicParsing="false" onAction="#connectedPhone" text="Power On/Off the phone" />
+                  <MenuItem fx:id="displayPhone" mnemonicParsing="false" onAction="#displayPhone" text="Display On Graph" />
+                  <MenuItem mnemonicParsing="false" text="Phone Mode" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="voiceMode" mnemonicParsing="false" onAction="#setVoiceMode" text="Mode Voice" />
+                  <MenuItem fx:id="dataMode" mnemonicParsing="false" onAction="#setDataMode" text="Mode Data" />
+                  <MenuItem fx:id="data2Mode" mnemonicParsing="false" onAction="#setData2Mode" text="Mode Data2" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="deletePhone" mnemonicParsing="false" onAction="#deleteMobilePhone" text="Delete a Phone" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+                  <MenuItem fx:id="aboutMenu" mnemonicParsing="false" onAction="#displayAbout" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Easy Insertion">
+               <items>
+                  <MenuItem fx:id="menuDataPhone" mnemonicParsing="false" onAction="#createDataPhone" text="Insert Data Phone" />
+                  <MenuItem fx:id="menuVoicePhone" mnemonicParsing="false" onAction="#createVoicePhone" text="Insert Voice Phone" />
+                  <MenuItem fx:id="menuData2Phone" mnemonicParsing="false" onAction="#createData2Phone" text="Insert Data 2 Phone" />
+                  <MenuItem fx:id="menuPowerAll" mnemonicParsing="false" onAction="#powerAll" text="Power On All Those Phones" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
